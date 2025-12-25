@@ -27,49 +27,42 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Portfolio Slider
-let currentSlide = 0;
-const itemsPerSlide = 4;
-const totalItems = 18;
-const maxSlides = Math.ceil(totalItems / itemsPerSlide);
+// Portfolio Swiper
+const portfolioSwiper = new Swiper('.portfolioSwiper', {
+    slidesPerView: 2,
+    spaceBetween: 15,
+    loop: false,
+    grabCursor: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+    },
+    breakpoints: {
+        // Mobile
+        320: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+        },
+        // Tablet
+        601: {
+            slidesPerView: 3,
+            spaceBetween: 18,
+        },
+        // Desktop
+        951: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+        },
+    },
+    on: {
+        init: function() {
+            console.log('Portfolio Swiper initialized');
+        },
+    },
+});
 
-function initPortfolioSlider() {
-    const dotsContainer = document.getElementById('portfolioDots');
-    for (let i = 0; i < maxSlides; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-        dot.onclick = () => goToSlide(i);
-        dotsContainer.appendChild(dot);
-    }
-    updateSlider();
-}
-
-function portfolioSlide(direction) {
-    currentSlide += direction;
-    if (currentSlide < 0) currentSlide = 0;
-    if (currentSlide >= maxSlides) currentSlide = maxSlides - 1;
-    updateSlider();
-}
-
-function goToSlide(index) {
-    currentSlide = index;
-    updateSlider();
-}
-
-function updateSlider() {
-    const grid = document.getElementById('portfolioGrid');
-    const offset = -(currentSlide * 20);
-    grid.style.transform = `translateX(${offset}%)`;
-
-    // Update dots
-    document.querySelectorAll('.slider-dot').forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-    });
-
-    // Update nav buttons
-    document.querySelector('.slider-nav.prev').classList.toggle('disabled', currentSlide === 0);
-    document.querySelector('.slider-nav.next').classList.toggle('disabled', currentSlide === maxSlides - 1);
-}
-
-// Initialize slider on page load
-window.addEventListener('load', initPortfolioSlider);

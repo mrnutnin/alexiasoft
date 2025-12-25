@@ -52,6 +52,7 @@
     
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -115,10 +116,10 @@
 
                 </h1>
 
-                <p data-en="Premium software solutions tailored for your business success. Expertly crafted, infinitely scalable."
+                <p data-en="Crafted software solutions tailored for your business success. Expertly crafted, infinitely scalable."
                     data-th="โซลูชันซอฟต์แวร์ระดับพรีเมียมที่ออกแบบมาเพื่อความสำเร็จของธุรกิจคุณ สร้างสรรค์อย่างเชี่ยวชาญ ปรับขนาดได้ไร้ขีดจำกัด">
 
-                    Premium software solutions tailored for your business success.
+                    Crafted software solutions tailored for your business success.
 
                 </p>
 
@@ -162,7 +163,7 @@
 
                                 <span class="kwd">const</span> project = <span class="kwd">await</span> <span class="prop">AlexiaSoft</span>.<span class="func">build</span>({</div>
 
-                            <div style="padding-left: 40px;">type: <span class="str">'Premium'</span>,</div>
+                            <div style="padding-left: 40px;">type: <span class="str">'Crafted'</span>,</div>
 
                             <div style="padding-left: 40px;">design: <span class="str">'Modern'</span>,</div>
 
@@ -190,31 +191,22 @@
 
             <div class="track">
 
-                <div class="glass-card tech-card"><i class="fa-brands fa-laravel" style="color:#F05340"></i> Laravel
-                </div>
-
+                <div class="glass-card tech-card"><i class="fa-brands fa-laravel" style="color:#F05340"></i> Laravel</div>
                 <div class="glass-card tech-card"><i class="fa-brands fa-react" style="color:#61dafb"></i> React</div>
-
                 <div class="glass-card tech-card"><i class="fa-brands fa-vuejs" style="color:#42b883"></i> Vue.js</div>
-
-                <div class="glass-card tech-card"><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js
-                </div>
-
+                <div class="glass-card tech-card"><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js</div>
                 <div class="glass-card tech-card"><i class="fa-solid fa-cube" style="color:#fbf0df"></i> Bun.js</div>
-
                 <div class="glass-card tech-card"><i class="fa-brands fa-aws" style="color:#ff9900"></i> AWS</div>
-
                 <div class="glass-card tech-card"><i class="fa-brands fa-docker" style="color:#2496ed"></i> Docker</div>
-
-                <div class="glass-card tech-card"><i class="fa-brands fa-laravel" style="color:#F05340"></i> Laravel
-                </div>
-
+                
+                <!-- Duplicate set for seamless loop -->
+                <div class="glass-card tech-card"><i class="fa-brands fa-laravel" style="color:#F05340"></i> Laravel</div>
                 <div class="glass-card tech-card"><i class="fa-brands fa-react" style="color:#61dafb"></i> React</div>
-
                 <div class="glass-card tech-card"><i class="fa-brands fa-vuejs" style="color:#42b883"></i> Vue.js</div>
-
-                <div class="glass-card tech-card"><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js
-                </div>
+                <div class="glass-card tech-card"><i class="fa-brands fa-node-js" style="color:#68a063"></i> Node.js</div>
+                <div class="glass-card tech-card"><i class="fa-solid fa-cube" style="color:#fbf0df"></i> Bun.js</div>
+                <div class="glass-card tech-card"><i class="fa-brands fa-aws" style="color:#ff9900"></i> AWS</div>
+                <div class="glass-card tech-card"><i class="fa-brands fa-docker" style="color:#2496ed"></i> Docker</div>
 
             </div>
 
@@ -331,182 +323,216 @@
             </p>
 
             <div class="portfolio-container">
-                <button class="slider-nav prev" onclick="portfolioSlide(-1)">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="slider-nav next" onclick="portfolioSlide(1)">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-                
-                <div class="portfolio-slider">
-                    <div class="portfolio-grid" id="portfolioGrid">
+                <div class="swiper portfolioSwiper">
+                    <div class="swiper-wrapper">
 
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-building"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="ERP System" data-th="ระบบ ERP">ERP System</h5>
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="ERP System" data-th="ระบบ ERP">ERP System</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-cash-register"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="POS System" data-th="ระบบ POS">POS System</h5>
-                    </div>
-                </div>
-
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Logistic System" data-th="ระบบ Logistic">Logistic System</h5>
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-cash-register"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="POS System" data-th="ระบบ POS">POS System</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-industry"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Manufacturing System" data-th="ระบบการผลิต">Manufacturing System</h5>
-                    </div>
-                </div>
-
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-users-gear"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="CRM System" data-th="ระบบ CRM">CRM System</h5>
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Logistic System" data-th="ระบบ Logistic">Logistic System</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-user-tie"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="HRM System" data-th="ระบบ HRM">HRM System</h5>
-                    </div>
-                </div>
-
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-calculator"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Accounting System" data-th="ระบบบัญชี">Accounting System</h5>
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Manufacturing System" data-th="ระบบการผลิต">Manufacturing System</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-store"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Market Place" data-th="ตลาดออนไลน์">Market Place</h5>
-                    </div>
-                </div>
-
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="e-Commerce" data-th="อีคอมเมิร์ซ">e-Commerce</h5>
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="CRM System" data-th="ระบบ CRM">CRM System</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="e-Learning" data-th="ระบบเรียนออนไลน์">e-Learning</h5>
-                    </div>
-                </div>
-
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="e-Timestamp" data-th="ระบบ e-Timestamp">e-Timestamp</h5>
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="HRM System" data-th="ระบบ HRM">HRM System</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Service Management" data-th="ระบบบริการ">Service Management</h5>
-                    </div>
-                </div>
-
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-utensils"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Restaurant Management" data-th="ระบบร้านอาหาร">Restaurant Management</h5>
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Accounting System" data-th="ระบบบัญชี">Accounting System</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-bed"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Dormitory Management" data-th="ระบบหอพัก">Dormitory Management</h5>
-                    </div>
-                </div>
-
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-warehouse"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Warehouse Management" data-th="ระบบคลังสินค้า">Warehouse Management</h5>
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Market Place" data-th="ตลาดออนไลน์">Market Place</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-list-check"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Asset Management" data-th="ระบบสินทรัพย์">Asset Management</h5>
-                    </div>
-                </div>
-
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-boxes-stacked"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Inventory Management" data-th="ระบบสต็อกสินค้า">Inventory Management</h5>
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="e-Commerce" data-th="อีคอมเมิร์ซ">e-Commerce</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div class="glass-card portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fa-solid fa-wrench"></i>
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="e-Learning" data-th="ระบบเรียนออนไลน์">e-Learning</h5>
+                        </div>
                     </div>
-                    <div class="portfolio-info">
-                        <h5 data-en="Maintenance Management" data-th="ระบบซ่อมบำรุง">Maintenance Management</h5>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="e-Timestamp" data-th="ระบบ e-Timestamp">e-Timestamp</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Service Management" data-th="ระบบบริการ">Service Management</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Restaurant Management" data-th="ระบบร้านอาหาร">Restaurant Management</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Dormitory Management" data-th="ระบบหอพัก">Dormitory Management</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Warehouse Management" data-th="ระบบคลังสินค้า">Warehouse Management</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Asset Management" data-th="ระบบสินทรัพย์">Asset Management</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Inventory Management" data-th="ระบบสต็อกสินค้า">Inventory Management</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="glass-card portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h5 data-en="Maintenance Management" data-th="ระบบซ่อมบำรุง">Maintenance Management</h5>
+                        </div>
                     </div>
                 </div>
 
                     </div>
+                    
+                    <!-- Swiper Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    
+                    <!-- Swiper Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
-                
-                <div class="slider-dots" id="portfolioDots"></div>
             </div>
 
         </section>
@@ -584,19 +610,6 @@
                     <!-- Replace with: <img src="images/clients/client-8.png" alt="Client 8"> -->
                 </div>
 
-                <div class="glass-card client-logo-card">
-                    <div class="client-logo-placeholder">
-                        <img src="images/clients/client-9.png" alt="Client 9">
-                    </div>
-                    <!-- Replace with: <img src="images/clients/client-9.png" alt="Client 9"> -->
-                </div>
-
-                <div class="glass-card client-logo-card">
-                    <div class="client-logo-placeholder">
-                        <img src="images/clients/client-10.png" alt="Client 10">
-                    </div>
-                    <!-- Replace with: <img src="images/clients/client-10.png" alt="Client 10"> -->
-                </div>
 
             </div>
 
@@ -723,8 +736,8 @@
             <div class="about-container">
                 <div class="stat-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                 <div class="glass-card stat-card"><h3>100%</h3><p data-en="Reliability" data-th="ความน่าเชื่อถือ">Reliability</p></div>
-                <div class="glass-card stat-card"><h3>6+ Years</h3><p data-en="Experience" data-th="ประสบการณ์">Experience</p></div>
-                <div class="glass-card stat-card"><h3>20+ </h3><p data-en="Experience" data-th="ประสบการณ์">Sucees Project</p></div>
+                <div class="glass-card stat-card"><h3>6+ </h3><p data-en="Experience" data-th="ประสบการณ์">Years Experience</p></div>
+                <div class="glass-card stat-card"><h3>20+ </h3><p data-en="Succes Project" data-th="Succes Project">Succes Project</p></div>
                 <div class="glass-card stat-card"><h3>24/7</h3><p data-en="Active Support" data-th="ดูแลตลอดเวลา">Active Support</p></div>
                 </div>
                 <div>
@@ -847,10 +860,10 @@
 
                 <h3>AlexiaSoft Co., Ltd.</h3>
 
-                <p data-en="Premium software solutions for modern businesses. We build technology that drives success."
+                <p data-en="Crafted software solutions for modern businesses. We build technology that drives success."
                     data-th="โซลูชันซอฟต์แวร์ระดับพรีเมียมสำหรับธุรกิจยุคใหม่ เราสร้างเทคโนโลยีที่ขับเคลื่อนความสำเร็จ">
 
-                    Premium software solutions for modern businesses.
+                    Crafted software solutions for modern businesses.
 
                 </p>
 
@@ -912,6 +925,7 @@
 
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 
 </body>

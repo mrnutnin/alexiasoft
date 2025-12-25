@@ -235,7 +235,7 @@ section {
 
 .code-window {
     background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 20px;
     padding: 25px;
@@ -323,7 +323,7 @@ section {
     display: flex;
     gap: 25px;
     width: max-content;
-    animation: scroll 40s linear infinite;
+    animation: scroll 30s linear infinite;
 }
 
 .tech-card {
@@ -333,13 +333,14 @@ section {
     gap: 12px;
     font-weight: 600;
     min-width: 170px;
+    white-space: nowrap;
 }
 
 @keyframes scroll {
-    from {
+    0% {
         transform: translateX(0);
     }
-    to {
+    100% {
         transform: translateX(-50%);
     }
 }
@@ -353,7 +354,7 @@ section {
 }
 
 .service-card {
-    padding: 25px;
+    padding: 20px;
     background: rgba(255, 255, 255, 0.2) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -378,38 +379,44 @@ section {
 }
 
 .service-icon {
-    font-size: 3rem;
-    margin-bottom: 25px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     background: var(--gradient-main);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
 
-/* Portfolio Slider */
+.service-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Portfolio Swiper */
 .portfolio-container {
     max-width: 1200px;
     margin: 50px auto 0;
-    padding: 0 60px;
+    padding: 0 20px;
     position: relative;
 }
 
-.portfolio-slider {
-    overflow: hidden;
-    border-radius: 20px;
+.portfolioSwiper {
+    padding: 0 50px 50px;
 }
 
-.portfolio-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
-    width: 500%;
-    transition: transform 0.5s ease;
+.portfolioSwiper .swiper-slide {
+    height: auto;
 }
 
 .portfolio-item {
-    flex: 0 0 calc((20% - 80px) / 4.5);
-    max-width: calc((20% - 80px) / 4.5);
+    height: 100%;
     padding: 0;
     overflow: hidden;
     cursor: pointer;
@@ -436,6 +443,7 @@ section {
     padding: 20px;
 }
 
+
 .portfolio-info h5 {
     margin: -1px;
     font-size: 0.8rem;
@@ -451,6 +459,55 @@ section {
     font-size: 0.8rem;
     margin-top: 15px;
     font-weight: 600;
+}
+
+/* Swiper Custom Styling */
+.portfolioSwiper .swiper-button-next,
+.portfolioSwiper .swiper-button-prev {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.portfolioSwiper .swiper-button-next:after,
+.portfolioSwiper .swiper-button-prev:after {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--text-primary);
+}
+
+.portfolioSwiper .swiper-button-next:hover,
+.portfolioSwiper .swiper-button-prev:hover {
+    background: var(--gradient-main);
+    transform: scale(1.1);
+}
+
+.portfolioSwiper .swiper-button-next:hover:after,
+.portfolioSwiper .swiper-button-prev:hover:after {
+    color: white;
+}
+
+.portfolioSwiper .swiper-pagination {
+    bottom: 10px;
+}
+
+.portfolioSwiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgba(100, 116, 139, 0.3);
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.portfolioSwiper .swiper-pagination-bullet-active {
+    background: var(--gradient-main);
+    width: 30px;
+    border-radius: 5px;
 }
 
 .slider-nav {
@@ -514,10 +571,11 @@ section {
     border-radius: 5px;
 }
 
+
 /* Trusted Clients */
 .clients-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     margin-top: 50px;
     max-width: 1000px;
@@ -750,7 +808,16 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 950px) {
+/* Tablet (Large) - 3 columns */
+@media (max-width: 1200px) and (min-width: 951px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Tablet (iPad) - Show 3 portfolio cards */
+@media (max-width: 950px) and (min-width: 601px) {
     .hero {
         grid-template-columns: 1fr;
         text-align: center;
@@ -760,10 +827,46 @@ footer {
         display: none;
     }
 
-    header {
-        width: 100%;
-        top: 0;
-        border-radius: 0;
+    .nav-menu {
+        display: none;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .slider-nav {
+        display: flex;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Mobile - Show 2 portfolio cards */
+@media (max-width: 600px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-visual {
+        display: none;
     }
 
     .nav-menu {
@@ -771,24 +874,35 @@ footer {
     }
 
     .grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
-    .portfolio-container {
-        padding: 0 20px;
+    .portfolioSwiper {
+        padding: 0 40px 40px;
     }
 
-    .portfolio-grid {
-        width: 900%;
+    .portfolioSwiper .swiper-button-next,
+    .portfolioSwiper .swiper-button-prev {
+        width: 35px;
+        height: 35px;
     }
 
-    .portfolio-item {
-        flex: 0 0 calc((11.11% - 20px) / 2);
-        max-width: calc((11.11% - 20px) / 2);
+    .portfolioSwiper .swiper-button-next:after,
+    .portfolioSwiper .swiper-button-prev:after {
+        font-size: 14px;
     }
 
-    .slider-nav {
-        display: none;
+    .clients-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+
+    .client-logo-card {
+        padding: 10px;
+        min-height: auto;
+        height: auto;
+        aspect-ratio: 1 / 0.95;
     }
 
     .about-container {
