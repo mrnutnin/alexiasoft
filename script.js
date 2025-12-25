@@ -15,6 +15,24 @@ function setLang(lang) {
     }, 350);
 }
 
+// Scroll Reveal Animation
+const revealElements = () => {
+    const reveals = document.querySelectorAll('.scroll-reveal');
+    reveals.forEach(element => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+            element.classList.add('active');
+        }
+    });
+};
+
+// Initialize scroll reveal on load
+window.addEventListener('load', revealElements);
+window.addEventListener('scroll', revealElements);
+
 // Nav Scroll Spy
 window.addEventListener('scroll', () => {
     let current = '';
